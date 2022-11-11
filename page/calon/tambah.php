@@ -12,7 +12,7 @@
 
 		$imgFile= $_FILES['gambar']['name'];
 		$tmp_dir = $_FILES['gambar']['tmp_name'];
-		$imgSize = $_FILES['gambar']['size'];
+		$imgSize = $_FILES['gambar']['size']; 
 
 		$upload_dir = '../../assets/foto_calon/';
 		$imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION));
@@ -90,8 +90,9 @@
 	                                    <label for="exampleInputPassword1">Nama Calon</label>
 	                                    <input type="text" name="nama_calon" class="form-control" id="exampleInputPassword1" placeholder="Password">
 	                                </div>
+	                               
 																	<div class="form-group">
-	                                    <label for="exampleInputPassword1">Visi dan Misi</label>
+	                                   								 <label for="exampleInputPassword1">Visi dan Misi</label>
 																			<textarea rows="8" cols="80" name="visi_misi"></textarea>
 	                                </div>
 																	<div class="form-group">
