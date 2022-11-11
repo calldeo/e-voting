@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 21, 2022 at 11:47 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Host: localhost:3306
+-- Generation Time: Nov 11, 2022 at 03:21 AM
+-- Server version: 8.0.30
+-- PHP Version: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `calon_osis` (
-  `id_calon` int(100) NOT NULL,
+  `id_calon` int NOT NULL,
   `nama_calon` varchar(100) NOT NULL,
   `visimisi` text NOT NULL,
   `gambar` varchar(100) NOT NULL,
-  `jumlah_vote` int(100) NOT NULL
+  `jumlah_vote` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -40,10 +40,13 @@ CREATE TABLE `calon_osis` (
 --
 
 INSERT INTO `calon_osis` (`id_calon`, `nama_calon`, `visimisi`, `gambar`, `jumlah_vote`) VALUES
-(2, 'FAJAR PUTRA SETIAWAN', '<p style=\"text-align: center;\"><strong>VISI</strong></p>\r\n<p style=\"text-align: left;\">Menjadikan osis Smk negeri 1 Tapen sebagai organisasi yang berkomentar, aktif, kreatif, inovatif serta sebagai wadah dalam menampung kreativitas siswa</p>\r\n<p style=\"text-align: center;\"><strong>MISI</strong></p>\r\n<p>1. Mengaktifkan proses kerja seluruh pengurus osis sesuai dengan program kerjanya.</p>\r\n<p>2. Menjalin kerja sama dengan organisasi lainnya.</p>\r\n<p>3. Memajukan semua kegiatan ekstrakulikuler yang ada di sekolah</p>', '830327.jpg', 201),
+(2, 'FAJAR PUTRA SETIAWAN', '<p style=\"text-align: center;\"><strong>VISI</strong></p>\r\n<p style=\"text-align: left;\">Menjadikan osis Smk negeri 1 Tapen sebagai organisasi yang berkomentar, aktif, kreatif, inovatif serta sebagai wadah dalam menampung kreativitas siswa</p>\r\n<p style=\"text-align: center;\"><strong>MISI</strong></p>\r\n<p>1. Mengaktifkan proses kerja seluruh pengurus osis sesuai dengan program kerjanya.</p>\r\n<p>2. Menjalin kerja sama dengan organisasi lainnya.</p>\r\n<p>3. Memajukan semua kegiatan ekstrakulikuler yang ada di sekolah</p>', '830327.jpg', 202),
 (1, 'ADELIYA LESTARI', '<p style=\"text-align: center;\"><strong>VISI</strong></p>\r\n<p style=\"text-align: left;\">Menjadi wadah bagi siswa untuk meningkatkan segala potensi yang ada sehingga terbentuk siswa yang cerdas, kreatif, berprestasi, berakhlak mulia dan menjaga nama baik sekolah menjadi sekolah yang unggul ditingkat nasional dan menjadikan OSIS sebagai sarana untuk menampung inspirasi dan aspirasi siswa dalam berbagai kegiatan</p>\r\n<p style=\"text-align: center;\"><strong>MISI</strong></p>\r\n<p>1. Melaksanakan kegiatan yang dapat meningkatkan hubungan positif antara guru dan siswa<br /><br />2. Mengoptimalkan kreativitas siswa SMKN 1 TAPEN melalui ekstrakurikuler dan meningkatkan kegiatan kegiatan keagamaan bagi seluruh siswa SMKN 1 TAPEN<br /><br />3. Menjadi OSIS yang terbuka dengan guru dan siswa supaya terjalin keharmonisan disegala kegiatan disekolah</p>', '590350.jpg', 126),
-(3, 'ALFIYAH SAKINAH', '<p style=\"text-align: center;\"><strong>VISI</strong></p>\r\n<p>Menjadikan OSIS SMKN 1 Tapen sebagai wadah untuk menampung inspirasi, aspirasi, dan kreatifitas. Membentuk generasi yang cerdas, berkarakter, dan paham teknologi informasi serta mewujudkan SMKN&nbsp; 1 Tapen sebagai sekolah yang bermutu, berakhlak mulia, berani tampil beda, jujur, adil, dan disiplin</p>\r\n<p style=\"text-align: center;\"><strong>MISI</strong></p>\r\n<p>1. Meningkatkan rasa cinta terhadap Tuhan YME</p>\r\n<p>2. Menumbuhkan budaya literasi dan penelitian melalui berbagai seminar maupun kegiatan lainnya</p>\r\n<p>3. Menyalurkan bakat dan potensi siswa/siswi melalui berbagai kegiatan ekstrakurikuler</p>\r\n<p>4. Menumbuhkan sifat jujur dan berani dalam berbagai aktifitas</p>\r\n<p>5. Sarana sosialisasi dan menampung aspirasi para siswa/siswi</p>', '85465.jpg', 54),
-(4, 'ROBY TENGKU FIRMANSYAH ', '<p style=\"text-align: center;\"><strong>VISI</strong></p>\r\n<p style=\"text-align: left;\">Menjadi wadah bagi siswa untuk&nbsp; mengembangkan segala potensi yang ada sehingga terbentuk siswa yang cerdas, kreatif, dinamis, berprestasi, berakhlak mulia dan menjaga nama baik sekolah menuju sekolah yang unggul di tingkat nasional </p>\r\n<p style=\"text-align: center;\"><strong>MISI</strong></p>\r\n<p style=\"text-align: left;\">1. Membentuk pengurus yang cerdas dan solid </p>\r\n<p style=\"text-align: left;\">2. Melaksanakan kegiatan yang dapat meningkatkan hubungan positif antara guru dan siswa.</p>\r\n<p style=\"text-align: left;\">3. Menciptakan kondisi lingkungan sekolah yang kondusif dalam belajar, untuk menghasilkan siswa yang berkompetensi dan mandiri.</p>\r\n<p style=\"text-align: left;\">4. Mengaktifkan kelompok belajar dari masing-masing kelas</p>\r\n<p style=\"text-align: left;\">5. Memaksimalkan peran siswa dalam menjaga kebersihan lingkungan</p>', '158583.jpg', 34);
+(3, 'ALFIYAH SAKINAH', '<p style=\"text-align: center;\"><strong>VISI</strong></p>\r\n<p>Menjadikan OSIS SMKN 1 Tapen sebagai wadah untuk menampung inspirasi, aspirasi, dan kreatifitas. Membentuk generasi yang cerdas, berkarakter, dan paham teknologi informasi serta mewujudkan SMKN&nbsp; 1 Tapen sebagai sekolah yang bermutu, berakhlak mulia, berani tampil beda, jujur, adil, dan disiplin</p>\r\n<p style=\"text-align: center;\"><strong>MISI</strong></p>\r\n<p>1. Meningkatkan rasa cinta terhadap Tuhan YME</p>\r\n<p>2. Menumbuhkan budaya literasi dan penelitian melalui berbagai seminar maupun kegiatan lainnya</p>\r\n<p>3. Menyalurkan bakat dan potensi siswa/siswi melalui berbagai kegiatan ekstrakurikuler</p>\r\n<p>4. Menumbuhkan sifat jujur dan berani dalam berbagai aktifitas</p>\r\n<p>5. Sarana sosialisasi dan menampung aspirasi para siswa/siswi</p>', '85465.jpg', 53),
+(4, 'ROBY TENGKU FIRMANSYAH ', '<p style=\"text-align: center;\"><strong>VISI</strong></p>\r\n<p style=\"text-align: left;\">Menjadi wadah bagi siswa untuk&nbsp; mengembangkan segala potensi yang ada sehingga terbentuk siswa yang cerdas, kreatif, dinamis, berprestasi, berakhlak mulia dan menjaga nama baik sekolah menuju sekolah yang unggul di tingkat nasional </p>\r\n<p style=\"text-align: center;\"><strong>MISI</strong></p>\r\n<p style=\"text-align: left;\">1. Membentuk pengurus yang cerdas dan solid </p>\r\n<p style=\"text-align: left;\">2. Melaksanakan kegiatan yang dapat meningkatkan hubungan positif antara guru dan siswa.</p>\r\n<p style=\"text-align: left;\">3. Menciptakan kondisi lingkungan sekolah yang kondusif dalam belajar, untuk menghasilkan siswa yang berkompetensi dan mandiri.</p>\r\n<p style=\"text-align: left;\">4. Mengaktifkan kelompok belajar dari masing-masing kelas</p>\r\n<p style=\"text-align: left;\">5. Memaksimalkan peran siswa dalam menjaga kebersihan lingkungan</p>', '158583.jpg', 33),
+(6, 'RESTU AJI', '<p>VISI</p>\r\n<p>1</p>\r\n<p>2</p>\r\n<p>3</p>\r\n<p>4</p>\r\n<p>MISI</p>\r\n<p>1</p>\r\n<p>2</p>\r\n<p>3</p>\r\n<p>4</p>', '682116.jpg', 0),
+(7, 'CONTOH', '<p>VISI</p>\r\n<p>1</p>\r\n<p>2</p>\r\n<p>3</p>\r\n<p>MISI</p>\r\n<p>12</p>\r\n<p>2</p>\r\n<p>34</p>\r\n<p>4</p>', '802790.jpg', 0),
+(11, 'ibra', 'visi\r\n1 safkhasfkja\r\n2 uasfkjasdh\r\n3 asjfhhgsa\r\nmisi\r\n1 sahfyasgj\r\n2 jasfgasjf\r\n3  ashfasj\r\n4 asjfhsadkjz', '142380.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -52,8 +55,8 @@ INSERT INTO `calon_osis` (`id_calon`, `nama_calon`, `visimisi`, `gambar`, `jumla
 --
 
 CREATE TABLE `hasil_voting` (
-  `id_user` int(11) NOT NULL,
-  `id_calon` int(1) NOT NULL,
+  `id_user` int NOT NULL,
+  `id_calon` int NOT NULL,
   `tanggal` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -121,7 +124,7 @@ INSERT INTO `hasil_voting` (`id_user`, `id_calon`, `tanggal`) VALUES
 (216, 1, '26-10-2021 10:52:12 am'),
 (217, 1, '26-10-2021 10:48:56 am'),
 (218, 2, '26-10-2021 11:11:32 am'),
-(103111, 4, '26-10-2021 10:24:30 am'),
+(103111, 2, '10-11-2022 16:11:33 pm'),
 (103112, 4, '26-10-2021 10:24:32 am'),
 (103113, 4, '26-10-2021 10:24:53 am'),
 (103114, 1, '26-10-2021 10:25:42 am'),
@@ -397,7 +400,6 @@ INSERT INTO `hasil_voting` (`id_user`, `id_calon`, `tanggal`) VALUES
 (129137, 2, '26-10-2021 09:54:23 am'),
 (129139, 1, '26-10-2021 09:54:09 am'),
 (129142, 4, '26-10-2021 11:02:01 am'),
-(129143, 3, '26-10-2021 11:03:07 am'),
 (129144, 3, '26-10-2021 09:09:26 am'),
 (129145, 4, '26-10-2021 09:07:49 am'),
 (129147, 2, '26-10-2021 09:08:36 am'),
@@ -503,16 +505,16 @@ DELIMITER ;
 --
 
 CREATE TABLE `setting_waktu` (
-  `id_setting` int(11) NOT NULL,
+  `id_setting` int NOT NULL,
   `waktu` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `setting_waktu`
 --
 
 INSERT INTO `setting_waktu` (`id_setting`, `waktu`) VALUES
-(1, '2021-10-26');
+(1, '2022-11-10');
 
 -- --------------------------------------------------------
 
@@ -521,12 +523,12 @@ INSERT INTO `setting_waktu` (`id_setting`, `waktu`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
+  `id_user` int NOT NULL,
   `nama` varchar(40) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `akses` int(1) NOT NULL,
-  `joining_date` timestamp NOT NULL DEFAULT current_timestamp()
+  `akses` int NOT NULL,
+  `joining_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -1223,19 +1225,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `calon_osis`
 --
 ALTER TABLE `calon_osis`
-  MODIFY `id_calon` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_calon` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `setting_waktu`
 --
 ALTER TABLE `setting_waktu`
-  MODIFY `id_setting` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_setting` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129313;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129313;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
