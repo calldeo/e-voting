@@ -94,6 +94,7 @@
 																	<div class="form-group">
 	                                   								 <label for="exampleInputPassword1">Visi dan Misi</label>
 																			<textarea rows="8" cols="80" name="visi_misi"></textarea>
+																			
 	                                </div>
 																	<div class="form-group">
 																		<label for="exampleInputFile">Foto Calon</label>

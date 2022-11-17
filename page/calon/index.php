@@ -49,6 +49,10 @@
 										</div>
 										<div class="col-lg-8">
 												<?php  echo $row['visimisi']?>
+												<style type="text/css">;
+									    h3 {font-family:  Cambria,"Times New Roman",serif}
+									    p { font-family:  Cambria,"Times New Roman",serif }
+									</style>
 										</div>
 									</div>
 								</div>

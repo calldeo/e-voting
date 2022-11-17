@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
     <head>
       <script src="../../assets/tinymce/js/tinymce/tinymce.min.js"></script>
-      <!-- <script>tinymce.init({ selector:'textarea' });</script> -->
+      <script>tinymce.init({ selector:'textarea' });</script>
 
         <title>E-VOTE SMK | <?php echo $page ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
