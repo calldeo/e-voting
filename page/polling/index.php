@@ -23,7 +23,7 @@ $(document).ready(function(){
  setInterval(function(){//setInterval() method execute on every interval until called clearInterval()
   $('#load_data').load("../polling/fetch.php").fadeIn("slow");
   //load() method fetch data from fetch.php page
- }, 30000);
+ }, 10000);
  
 });
 </script>

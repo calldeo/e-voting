@@ -54,7 +54,7 @@ include_once '../../layout/navigation.php';
             <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Tambah User
+                            Update Admin
                         </header>
                         <div class="panel-body">
                             <div class="position-center">

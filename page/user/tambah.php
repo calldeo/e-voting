@@ -7,7 +7,7 @@ include_once '../../layout/header.php';
 if(isset($_POST['tambah'])){
 	$nama = $_POST['nama'];
 	$username = $_POST['user'];
-	$password = $_POST['pass'];
+	$password = md5($_POST['pass']);
 	$akses  = "2";
 
 	if($admin->TambahtUser($nama,$username,$password, $akses)){ ?>
@@ -47,7 +47,7 @@ include_once '../../layout/navigation.php';
             <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Tambah User
+                            Tambah Pemilih
                         </header>
                         <div class="panel-body">
                             <div class="position-center">

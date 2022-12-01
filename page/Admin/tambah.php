@@ -1,5 +1,5 @@
 <?php
-$page = "Admin";
+$page = "user";
 include_once '../../layout/cek_id.php';
 include_once '../../layout/cek_hakAkses.php';
 include_once '../../layout/header.php';
@@ -7,7 +7,7 @@ include_once '../../layout/header.php';
 if(isset($_POST['tambah'])){
 	$nama = $_POST['nama'];
 	$username = $_POST['user'];
-	$password = $_POST['pass'];
+	$password = md5($_POST['pass']);
 	$akses  = "1";
 
 	if($admin->TambahtUser($nama,$username,$password, $akses)){ ?>
@@ -15,26 +15,26 @@ if(isset($_POST['tambah'])){
 		$( document ).ready(function() {
 			swal({title: "Selamat!", text: "Berhasil Menambahkan Data Baru", type: "success"},
 				function(){
-					document.location='../Admin'
+					document.location='../admin'
 				}
 			);
 		});
 	</script>
 	<?php
-	}else { ?>
-			<script type="text/javascript">
-		      $( document ).ready(function() {
-		        swal({title: "Maaf!", text: "Gagal menambahkan Data", type: "error"},
-		          function(){
-		            document.location=''
-		          }
-		        );
-		      });
-		    </script>
+}else { ?>
+		<script type="text/javascript">
+	      $( document ).ready(function() {
+	        swal({title: "Maaf!", text: "Gagal menambahkan Data", type: "error"},
+	          function(){
+	            document.location=''
+	          }
+	        );
+	      });
+	    </script>
 <?php
-	}
 }
-			include_once '../../layout/navigation.php';
+}
+include_once '../../layout/navigation.php';
 ?>
 
 
@@ -47,7 +47,7 @@ if(isset($_POST['tambah'])){
             <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Tambah User
+                            Tambah Admin
                         </header>
                         <div class="panel-body">
                             <div class="position-center">
@@ -76,8 +76,8 @@ if(isset($_POST['tambah'])){
 		</div>
 	</section>
 
-<?php
-		include_once '../../layout/footer.php';
+<?php include_once '../../layout/footer.php';
+
  ?>
 <!--
   Notice: Undefined variable: page in D:\AAA\xampp\htdocs\osis\layout\navigation.php on line 46

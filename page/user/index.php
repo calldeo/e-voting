@@ -11,7 +11,7 @@ include_once '../../layout/navigation.php';
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Data User Siswa
+      Data Pemilih
     </div>
     <div class="row w3-res-tb">
       <div class="col-xs-6">

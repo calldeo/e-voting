@@ -21,7 +21,7 @@ $query->execute(); $user = $query->fetch(); $total = $user['jumlah_user'];
 						<i class="fa fa-users" ></i>
 					</div>
 					<div class="col-xs-8 market-update-left">
-					<h4>Telah Memilih</h4>
+					<h4>Sudah Memilih</h4>
 						<h3><?= $masuk ?></h3>
 						<p>orang</p>
 					</div>
@@ -53,18 +53,25 @@ $query->execute(); $user = $query->fetch(); $total = $user['jumlah_user'];
 								<header class="agileits-box-header clearfix">
 									<h3>
 										E-VOTE KANETA
+
 									</h3>
+
 								</header>
 								<div class="agileits-box-body clearfix">
 									<br>
 									<p align="center">
-										<img src="../../assets/logo/kaneta.png" width="20%" alt="SMK Negeri 1 Tapen">
+										<img src="../../assets/logo/kaneta
+										.png" width="20%" alt="SMK Negeri 1 Tapen">
 									</p>
 									<br><br>
-									<p align="justify">
+									<p align="center">
 										E-VOTE adalah sebuah Sistem Informasi yang bertujuan untuk memfasilitasi Kegiatan Sekolah
 										 untuk mencari calon Ketua OSIS di SMK Negeri 1 Tapen Tahun Periode 2018/2019.
 									</p>
+									<style type="text/css">;
+									    h3 {font-family:  Cambria,"Times New Roman",serif}
+									    p { font-family:  Cambria,"Times New Roman",serif }
+									</style>
 								</div>
 							</div>
 						</div>

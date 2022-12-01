@@ -44,11 +44,19 @@ class ADMIN{
             while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
     ?>
     	        <tr>
-                    <td><?php print(++$no); ?></td>
+                    <td><?php print($row['id_user']); ?></td>
                     <td><?php print($row['nama']); ?></td>
                     <td><?php print($row['username']); ?></td>
                     <td><?php print($row['password']); ?></td>
-										<td><?php print($row['akses']); ?></td>
+					<td>
+						<?php  
+						if ($row['akses'] == 1) {
+							echo "Admin";
+						} else if ($row['akses'] == 2) {
+							echo "Pemilih";
+						}
+						?>
+					</td>
                     <td>
                         <a href="edit.php?id_user=<?php print($row['id_user']); ?>" class="btn btn-primary btn-xs" role="button" aria-pressed="true"><i class="fa fa-pencil-square-o"> <span>Edit</span></i>
                         </a>
@@ -104,7 +112,7 @@ public function DeleteVoted($id){
 			$stmt = $this->conn->prepare("INSERT INTO users(nama,username,password, akses) VALUES(:nama, :username, :password, :akses)");
 			$stmt->bindparam(":nama",$nama);
 			$stmt->bindparam(":username",$username);
-			$stmt->bindparam(":password",$password);
+			$stmt->bindparam(":password",md5($password));
 			$stmt->bindparam(":akses", $akses);
 			$stmt->execute();
 			return true;
@@ -132,7 +140,7 @@ public function updateUser($id, $nama,$username,$password, $akses){
 			$stmt->bindparam(":id_user",$id);
 			$stmt->bindparam(":nama",$nama);
 			$stmt->bindparam(":username",$username);
-			$stmt->bindparam(":password",$password);
+			$stmt->bindparam(":password",md5($password));
 			$stmt->bindparam(":akses", $akses);
 			$stmt->execute();
 
@@ -153,7 +161,7 @@ public function DeleteUser($id){
 
 // ========================================================= =============================================== //
 	public function deleteAllUser(){
-		$stmt = $this->conn->prepare("TRUNCATE table users");
+		$stmt = $this->conn->prepare("DELETE FROM users WHERE akses=2");
 		$stmt->execute();
 		return true;
 	}
@@ -239,7 +247,7 @@ public function TambahVote($id_user,$id_calon,$tanggal){
 			$stmt->execute(array(':username'=>$username));
 			$adminRow=$stmt->fetch(PDO::FETCH_ASSOC);
 			if($stmt->rowCount() == 1){
-				if($password == $adminRow['password']){
+				if(md5($password) == $adminRow['password'] || $password == $adminRow['password']){
 					$_SESSION['admin_session'] = $adminRow['id_user'];
 					return true;
 				}else{

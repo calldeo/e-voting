@@ -7,7 +7,7 @@ include_once '../../layout/header.php';
 if(isset($_POST['tambah'])){
 	$nama = $_POST['nama'];
 	$username = $_POST['user'];
-	$password = $_POST['pass'];
+	$password = md5($_POST['pass']);
 	$akses  = "2";
 
 	if($admin->TambahtUser($nama,$username,$password, $akses)){ ?>
@@ -47,7 +47,7 @@ include_once '../../layout/navigation.php';
             <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Import Data User
+                            Import Data Pemilih
                         </header>
                         <div class="panel-body">
                                 <form method="post" action="" enctype="multipart/form-data">
@@ -117,7 +117,7 @@ include_once '../../layout/navigation.php';
                     <table class='table table-striped b-t b-light' id='dataTables-example'>
                       <thead>
                         <tr>
-                          <th>No.</th>
+                          <th>NISN/NIP.</th>
                           <th>Nama</th>
                           <th>Username</th>
                           <th>Password</th>
