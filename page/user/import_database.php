@@ -38,11 +38,12 @@
 			// Artinya karena baris pertama adalah nama-nama kolom
 			// Jadi dilewat saja, tidak usah diimport
 			if($numrow > 1){
+				$p = md5($password);
 				// Proses simpan ke Database
 				$sql->bindParam(':id_user', $id_user);
 				$sql->bindParam(':nama', $nama);
 				$sql->bindParam(':username', $username);
-				$sql->bindParam(':password', $password);
+				$sql->bindParam(':password', $p);
 				$sql->bindParam(':akses', $akses);
 				$sql->execute(); // Eksekusi query insert
 			}

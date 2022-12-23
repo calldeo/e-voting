@@ -2,7 +2,7 @@
 class Database
 {   
     private $host = "localhost";
-    private $db_name = "db_simpeosis";
+    private $db_name = "db_simpeosisv1";
     private $username = "root";
     private $password = "";
     public $conn;

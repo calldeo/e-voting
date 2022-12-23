@@ -10,7 +10,9 @@ if(isset($_POST['btn-setWaktu'])){
 	        'id_setting'		=> 1,
 	    ];
 
-	if($admin->tglVote($data)){ ?>
+	if($admin->tglVote($data)){ 
+		$_SESSION['tgl_vote'] = $_POST['waktu'];
+		?>
 	<script type="text/javascript">
 		$( document ).ready(function() {
 			swal({title: "Selamat!", text: "Berhasil mengupdate setting waktu", type: "success"},

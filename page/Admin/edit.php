@@ -13,7 +13,7 @@ if(isset($_POST['edit'])){
 	$id = $_GET['id_user'];
 	$nama = $_POST['nama'];
 	$username = $_POST['user'];
-	$password = $_POST['pass'];
+	$password = md5($_POST['pass']);
 	$akses  = "1";
 
 	if($admin->updateUser($id,$nama,$username,$password, $akses)){ ?>

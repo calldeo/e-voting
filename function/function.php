@@ -86,8 +86,15 @@ class ADMIN{
                     <td><?php print($row['id_calon']); ?></td>
 										<td><?php print($row['tanggal']); ?></td>
                     <td>
+                    	<?php  
+                    	if ($_SESSION['tgl_vote'] != date('Y-m-d')) {
+                    		// code...
+                    	
+                    	?>
                         <a href="hapus.php?id_user=<?php print($row['id_user']); ?>" class="btn btn-danger btn-xs" role="button" aria-pressed="true"><i class="fa fa-trash-o"> <span>Delete</span></i>
                         </a>
+                        <?php } ?>
+
                     </td>
 
                 </tr>
@@ -223,13 +230,12 @@ public function DeleteUser($id){
 
 
 // Vote
-public function TambahVote($id_user,$id_calon,$tanggal){
+public function TambahVote($id_user,$id_calon){
 	try
 	{
-		$stmt = $this->conn->prepare("INSERT INTO hasil_voting(id_user, id_calon, tanggal) VALUES(:id_user, :id_calon, :tanggal)");
+		$stmt = $this->conn->prepare("INSERT INTO hasil_voting(id_user, id_calon) VALUES(:id_user, :id_calon)");
 		$stmt->bindparam(":id_user",$id_user);
 		$stmt->bindparam(":id_calon",$id_calon);
-		$stmt->bindparam(":tanggal",$tanggal);
 		$stmt->execute();
 		return true;
 	}

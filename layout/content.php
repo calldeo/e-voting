@@ -1,7 +1,7 @@
 <?php
-$NUM = $admin->runQuery("SELECT SUM(jumlah_vote) FROM calon_osis");
+$NUM = $admin->runQuery("SELECT COUNT(id_user) AS jumlah_vote FROM hasil_voting");
 $NUM->execute();
-$NUMS=$NUM->fetch(PDO::FETCH_ASSOC); $masuk = $NUMS['SUM(jumlah_vote)'];
+$NUMS=$NUM->fetch(PDO::FETCH_ASSOC); $masuk = $NUMS['jumlah_vote'];
 
 $stmt = $admin->runQuery("SELECT * FROM calon_osis");
 $stmt->execute();
@@ -66,7 +66,7 @@ $query->execute(); $user = $query->fetch(); $total = $user['jumlah_user'];
 									<br><br>
 									<p align="center">
 										E-VOTE adalah sebuah Sistem Informasi yang bertujuan untuk memfasilitasi Kegiatan Sekolah
-										 untuk mencari calon Ketua OSIS di SMK Negeri 1 Tapen Tahun Periode 2018/2019.
+										 untuk mencari calon Ketua OSIS di SMK Negeri 1 Tapen Tahun Periode 2022/2023.
 									</p>
 									<style type="text/css">;
 									    h3 {font-family:  Cambria,"Times New Roman",serif}

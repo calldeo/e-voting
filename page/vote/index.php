@@ -23,9 +23,8 @@ include_once '../../layout/header.php';
 		{
 			$id_user 	= $dataUser['id_user'];
 			$id_calon 	= $_POST['vote'];
-			$tanggal	= date('d-m-Y H:i:s a');
 
-			if($admin->TambahVote($id_user,$id_calon,$tanggal))
+			if($admin->TambahVote($id_user,$id_calon))
 			{ 
 		?>
 				<script type="text/javascript">
