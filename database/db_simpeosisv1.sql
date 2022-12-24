@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 23, 2022 at 06:57 AM
--- Server version: 8.0.30
--- PHP Version: 7.3.20
+-- Waktu pembuatan: 24 Des 2022 pada 03.59
+-- Versi server: 5.7.33
+-- Versi PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,57 +24,66 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `calon_osis`
+-- Struktur dari tabel `calon_osis`
 --
 
 CREATE TABLE `calon_osis` (
-  `id_calon` int NOT NULL,
+  `id_calon` int(11) NOT NULL,
   `nama_calon` varchar(35) NOT NULL,
   `visimisi` text NOT NULL,
   `gambar` varchar(50) NOT NULL,
-  `jumlah_vote` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `jumlah_vote` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `calon_osis`
+-- Dumping data untuk tabel `calon_osis`
 --
 
 INSERT INTO `calon_osis` (`id_calon`, `nama_calon`, `visimisi`, `gambar`, `jumlah_vote`) VALUES
-(1, 'dwi&agis', '<p>1</p>', '122582.jpeg', 0),
-(2, 'RESTU AJI', '<p>2</p>', '485112.jpeg', 0);
+(1, 'Dwi&Agis', '<p><strong>PROGRAM KERJA</strong></p>\r\n<p>1. Melaksanakan kegiatan lomba agustusan.</p>\r\n<p>2. Melaksanakan penghijauan dan perindangan di lingkungan sekolah.</p>\r\n<p>3. Membaca surat-surat pendek setiap jam pertama pembelajaran.</p>\r\n<p>4. Mengembangkan peran siswa di dalam OSIS dengan tugas masing-masing.</p>\r\n<p>5. Melaksanakan kegiatan maulid nabi.</p>\r\n<p>6. Mengembangkan mading setiap bulannya.</p>', '122582.jpeg', 0),
+(2, 'Sakila & Dwi', '<p><strong>PROGRAM KERJA</strong></p>\r\n<p>1. Mengadakan festival ekstrakurikuler.</p>\r\n<p>2. Melaksanakan sholat dhuha perkelas.</p>\r\n<p>3. Melaksanakan bazar perkelas.</p>\r\n<p>4. Melaksanakan ekstrakurikuler teater dan tari.</p>\r\n<p>5. Mengadakan debate class jurnalistik.</p>\r\n<p>6. Mengadakan english club.</p>', '485112.jpeg', 0),
+(3, 'Asri & Rendy', '<p><strong>PROGRAM KERJA</strong></p>\r\n<p>1. Melaksanakan sholat wajib dan sunah berjama\\\'ah.</p>\r\n<p>2. Melaksanakan kegiatan keagamaan seperti Maulid Nabi, Isra\\\' Mi\\\'roj dan Idul Adha.</p>\r\n<p>3. Melaksanakan Amaliyah sesuai dengan Norma dan agama seperti infak atau amal di setiap hari jum\\\'at.</p>\r\n<p>4. Bekerja sama dengan guru BK melakukan razia untuk menegakkan kedisiplinan siswa di sekolah.</p>\r\n<p>5. Mempersiapkan upacara rutin maupun upacara untuk peringatan besar seperti hari kemerdekaan.</p>\r\n<p>6. Mengadakan pentas seni secara berkala sebagai ajang untuk menyalurkan bakat siswa.</p>\r\n<p>7. Melaksanakan kegiatan&nbsp;kepramukaan.</p>', '128689.jpeg', 0),
+(4, 'Retno & Rosidi', '<p><strong>PROGRAM KERJA</strong></p>\r\n<p>1. Melaksanakan peringatan hari-hari besar keagamaan.</p>\r\n<p>2. Menggalang dana untuk masyarakat indonesia yang terkena musibah bencana alam.</p>\r\n<p>3. Melaksanakan latihan upacara pada hari sabtu untuk kelas yang telah terpilih menjadi petugas upacara.</p>\r\n<p>4. Menjalankan mading setiap 1 bulan 1 kali.</p>\r\n<p>5. Melaksanakan classmeeting setiap 1 semester 2 kali.</p>\r\n<p>6. Mengadakan KANETA got talent,dimana siswa/siswi dapat menampilkan bakat, minat, dan&nbsp;kreativitasnya.</p>', '130153.jpeg', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hasil_voting`
+-- Struktur dari tabel `hasil_voting`
 --
 
 CREATE TABLE `hasil_voting` (
-  `id_user` int NOT NULL,
-  `id_calon` int NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_calon` int(11) NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `hasil_voting`
+-- Dumping data untuk tabel `hasil_voting`
 --
 
 INSERT INTO `hasil_voting` (`id_user`, `id_calon`, `tanggal`) VALUES
-(146, 1, '2022-12-23 13:14:10');
+(101, 1, '2022-12-24 10:30:42'),
+(102, 2, '2022-12-24 10:32:30'),
+(106, 1, '2022-12-24 09:45:21'),
+(108, 1, '2022-12-24 09:31:35'),
+(110, 1, '2022-12-24 09:31:46'),
+(111, 2, '2022-12-24 09:43:52'),
+(113, 1, '2022-12-24 09:46:14'),
+(122, 1, '2022-12-24 10:47:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `setting_waktu`
+-- Struktur dari tabel `setting_waktu`
 --
 
 CREATE TABLE `setting_waktu` (
-  `id_setting` int NOT NULL,
+  `id_setting` int(11) NOT NULL,
   `waktu` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `setting_waktu`
+-- Dumping data untuk tabel `setting_waktu`
 --
 
 INSERT INTO `setting_waktu` (`id_setting`, `waktu`) VALUES
@@ -83,20 +92,20 @@ INSERT INTO `setting_waktu` (`id_setting`, `waktu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
-  `id_user` int NOT NULL,
+  `id_user` int(11) NOT NULL,
   `nama` varchar(35) NOT NULL,
   `username` varchar(35) NOT NULL,
   `password` varchar(35) NOT NULL,
-  `akses` int NOT NULL,
+  `akses` int(11) NOT NULL,
   `joining_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `username`, `password`, `akses`, `joining_date`) VALUES
@@ -764,58 +773,58 @@ INSERT INTO `users` (`id_user`, `nama`, `username`, `password`, `akses`, `joinin
 --
 
 --
--- Indexes for table `calon_osis`
+-- Indeks untuk tabel `calon_osis`
 --
 ALTER TABLE `calon_osis`
   ADD PRIMARY KEY (`id_calon`);
 
 --
--- Indexes for table `hasil_voting`
+-- Indeks untuk tabel `hasil_voting`
 --
 ALTER TABLE `hasil_voting`
-  ADD KEY `id_user` (`id_user`) USING BTREE,
+  ADD PRIMARY KEY (`id_user`) USING BTREE,
   ADD KEY `id_calon` (`id_calon`) USING BTREE;
 
 --
--- Indexes for table `setting_waktu`
+-- Indeks untuk tabel `setting_waktu`
 --
 ALTER TABLE `setting_waktu`
   ADD PRIMARY KEY (`id_setting`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `calon_osis`
+-- AUTO_INCREMENT untuk tabel `calon_osis`
 --
 ALTER TABLE `calon_osis`
-  MODIFY `id_calon` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_calon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `setting_waktu`
+-- AUTO_INCREMENT untuk tabel `setting_waktu`
 --
 ALTER TABLE `setting_waktu`
-  MODIFY `id_setting` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_setting` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1594;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1594;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `hasil_voting`
+-- Ketidakleluasaan untuk tabel `hasil_voting`
 --
 ALTER TABLE `hasil_voting`
   ADD CONSTRAINT `hasil_voting_ibfk_1` FOREIGN KEY (`id_calon`) REFERENCES `calon_osis` (`id_calon`),
