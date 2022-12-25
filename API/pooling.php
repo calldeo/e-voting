@@ -2,11 +2,10 @@
 header('Content-Type: application/json');
 include('connection.php');
 
-$query = "SELECT nama_calon, SUM(jumlah_vote) as hasil FROM calon_osis GROUP BY nama_calon";
+$query = "SELECT calon_osis.nama_calon ,COUNT(id_user) as jumlah_vote FROM hasil_voting INNER JOIN calon_osis ON calon_osis.id_calon = hasil_voting.id_calon GROUP BY hasil_voting.id_calon";
 $response = array();
 $result = mysqli_query($koneksi, $query);
 while ($row = mysqli_fetch_assoc($result)) {
     $response[] = $row;
 }
-echo json_encode(array('data' => $response));
-// echo json_encode($response);
+echo json_encode(array('data_voting' => $response));
