@@ -118,21 +118,21 @@
 	                            Edit Calon
 	                        </header>
 	                        <div class="panel-body">
-	                            <div class="position-center">
+	                          <div class="position-center">
 	                                <form role="form" action="" method="POST" enctype="multipart/form-data">
 	                                <div class="form-group">
 	                                    <label for="exampleInputPassword1">Nama Calon</label>
-	                                    <input type="text" value="<?php echo $nama_calon?>" name="nama_calon" class="form-control" id="exampleInputPassword1" placeholder="Password">
+	                                    <input type="text" value="<?php echo $nama_calon?>" name="nama_calon" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
 	                                </div>
 									<div class="form-group">
 	                                    <label for="exampleInputPassword1">Visi dan Misi</label>
-										<textarea rows="8" cols="80" name="visimisi" class="textarea"> <?php echo $visimisi?> </textarea>
-	                                </div>
+										<textarea rows="8" cols="80" name="visimisi" required class="textarea"> <?php echo $visimisi?> </textarea>
+	                                </div >
 									<div class="form-group">
 										<label for="exampleInputFile">Foto Calon</label><br>
 										<img class="img-rounded" width="150px" src="../../assets/foto_calon/<?php echo $gambar?>" alt="">
-										<input name="gambar" type="file"  accept="image/*">
-	                                </div>
+										<input name="gambar" type="file"  accept="image/*" required>
+	                </div>
 
 	                                <input type="submit" name="btn-update" class="btn btn-info" value="Edit"></input>
 	                            </form>

@@ -92,6 +92,7 @@ class ADMIN{
                     	
                     	?>
                         <a href="hapus.php?id_user=<?php print($row['id_user']); ?>" class="btn btn-danger btn-xs" role="button" aria-pressed="true"><i class="fa fa-trash-o"> <span>Delete</span></i>
+
                         </a>
                         <?php } ?>
 
@@ -119,7 +120,7 @@ public function DeleteVoted($id){
 			$stmt = $this->conn->prepare("INSERT INTO users(nama,username,password, akses) VALUES(:nama, :username, :password, :akses)");
 			$stmt->bindparam(":nama",$nama);
 			$stmt->bindparam(":username",$username);
-			$stmt->bindparam(":password",md5($password));
+			$stmt->bindparam(":password",$password);
 			$stmt->bindparam(":akses", $akses);
 			$stmt->execute();
 			return true;
@@ -147,7 +148,7 @@ public function updateUser($id, $nama,$username,$password, $akses){
 			$stmt->bindparam(":id_user",$id);
 			$stmt->bindparam(":nama",$nama);
 			$stmt->bindparam(":username",$username);
-			$stmt->bindparam(":password",md5($password));
+			$stmt->bindparam(":password",$password);
 			$stmt->bindparam(":akses", $akses);
 			$stmt->execute();
 

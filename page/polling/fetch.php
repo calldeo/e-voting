@@ -1,11 +1,11 @@
 <?php
 	include_once '../../layout/cek_id.php';
 
-	$NUM = $admin->runQuery("SELECT SUM(jumlah_vote) FROM calon_osis");
+	$NUM = $admin->runQuery("SELECT COUNT(id_user) as jumlah FROM hasil_voting");
 	$NUM->execute();
-	$NUMS=$NUM->fetch(PDO::FETCH_ASSOC); $masuk = $NUMS['SUM(jumlah_vote)'];
+	$NUMS=$NUM->fetch(PDO::FETCH_ASSOC); $masuk = $NUMS['jumlah'];
 
-	$stmt = $admin->runQuery("SELECT * FROM calon_osis");
+	$stmt = $admin->runQuery("SELECT calon_osis.id_calon, calon_osis.gambar, calon_osis.nama_calon, COUNT(hasil_voting.id_user) as jumlah_vote FROM calon_osis LEFT JOIN hasil_voting ON calon_osis.id_calon = hasil_voting.id_calon GROUP BY calon_osis.id_calon");
 	$stmt->execute();
 
 	$query = $admin->runQuery("SELECT COUNT(nama) as jumlah_user FROM users");

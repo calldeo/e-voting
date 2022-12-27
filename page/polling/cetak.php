@@ -25,22 +25,40 @@ $page='polling';
 	</div><br>
 
 
-	<hr>
 
+
+<td rowspan="">
+                <img src="../../assets/logo/1.png" width="100%" />
+            </td>
 	<table border="1" width="100%">
-		<tr>
-			<th>No</th>
-			<th>Nama Calon</th>
-			<th>Jumlah Vote</th>
+		<tr> 
+			  <th bgcolor="yellow" >NO</th>
+			<th bgcolor="yellow">Nama Calon</th>
+			<th bgcolor="yellow">Jumlah Vote</th>
 		</tr>
-		<tr>
-			<td>1</td>
-			<td>Agis</td>
-			<td>100</td>
-		</tr>
+		 <tbody>
+						<?php
+						//TRUNCATE TABLE nama tabel
+						// mysql_num_rows($query)
+						// $stm = $admin->runQuery("SELECT * FROM calon_osis ORDER BY id_calon ASC");
+						$stm = $admin->runQuery("SELECT calon_osis.id_calon , calon_osis.nama_calon ,COUNT(id_user) as jumlah_vote FROM calon_osis LEFT JOIN hasil_voting ON calon_osis.id_calon = hasil_voting.id_calon GROUP BY calon_osis.id_calon");
+						$stm->execute();
+						if($stm->rowCount()>0){
+								while($rows=$stm->fetch(PDO::FETCH_ASSOC)){
+						 ?>
+							<tr>
+		            <th style="text-align:center;color:black;background:#f9f9f9;"> <?= $rows['id_calon'] ?></th>
+								<th style="text-align:center;color:black;background:#f9f9f9;"> <?= $rows['nama_calon'] ?></th>
+		            <th style="text-align:center;color:black;background:#f9f9f9;"><?= $rows['jumlah_vote'] ?></th>
+		          </tr>
+						<?php }} ?>
+		        </tbody>
 	</table>
-		3
-		<section id="main-content">
+		<script>
+		window.print();
+	</script> 
+		
+		<!-- <section id="main-content">
 	<section class=" wrapper">
 		<div class="col-lg-10 ">
 		<h3 style="text-align:center;margin-bottom:10px;">HASIL QUICK COUNT PEMILIHAN KETUA OSIS</h3>
@@ -81,4 +99,4 @@ $page='polling';
 				</div>
 			<script>
 		window.print();
-	</script>
+	</script> -->

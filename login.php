@@ -40,12 +40,13 @@
                     <form action="auth.php" class="form-horizontal" method="post">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Username" name="username" />
+                            <input type="text" class="form-control" placeholder="Username" name="username" required />
+
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Password" name=password />
+                            <input type="password" class="form-control" placeholder="Password" name=password required />
                         </div>
                     </div>
                     <div class="form-group">

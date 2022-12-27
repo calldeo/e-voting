@@ -20,7 +20,7 @@ include_once '../../layout/navigation.php';
             <thead>
               <tr>
                 <th>Nama</th>
-                <th>Id Calon</th>
+                <th>No Urut Calon</th>
                 <th>Tanggal</th>
                 <th>Action</th>
               </tr>
