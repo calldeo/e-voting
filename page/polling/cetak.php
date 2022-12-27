@@ -28,7 +28,7 @@ $page='polling';
 
 
 <td rowspan="">
-                <img src="../../assets/logo/1.png" width="100%" />
+                <img src="../../assets/logo/surat tugas.jpeg" width="100%" />
             </td>
 	<table border="1" width="100%">
 		<tr> 
