@@ -22,7 +22,7 @@ include_once '../../layout/navigation.php';
                 <th>Nama</th>
                 <th>No Urut Calon</th>
                 <th>Tanggal</th>
-                <th>Action</th>
+                <!-- <th>Action</th> -->
               </tr>
             </thead>
             <tbody>

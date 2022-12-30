@@ -89,7 +89,7 @@
 	                                <form role="form" action="" method="POST" enctype="multipart/form-data">
 	                        <div class="form-group">
 	                                    <label for="exampleInputPassword1">Nama Calon</label>
-	                                    <input type="text" name="nama_calon" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+	                                    <input type="text" name="nama_calon" class="form-control" id="exampleInputPassword1" placeholder="Password" required onkeyup="lettersOnly(this)">
 	                       </div>
 	                               
 					 <div class="form-group">
@@ -112,5 +112,10 @@
 									</div>
 			</div>
 		</section>
+<script >function lettersOnly(input) {
+    var regex = /[^a-z ]/gi;
+    input.value = input.value.replace(regex, "");
+		}
+    </script>
 
 <?php include_once '../../layout/footer.php'; ?>

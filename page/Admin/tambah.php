@@ -4,6 +4,8 @@ include_once '../../layout/cek_id.php';
 include_once '../../layout/cek_hakAkses.php';
 include_once '../../layout/header.php';
 
+
+
 if(isset($_POST['tambah'])){
 	$nama = $_POST['nama'];
 	$username = $_POST['user'];
@@ -31,6 +33,7 @@ if(isset($_POST['tambah'])){
 	        );
 	      });
 	    </script>
+
 <?php
 }
 }
@@ -54,7 +57,7 @@ include_once '../../layout/navigation.php';
                                 <form role="form" action="" method="POST">
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Nama</label>
-                                    <input type="text" name="nama" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                                    <input type="text" name="nama" class="form-control" id="exampleInputPassword1" placeholder="Password" onkeyup="lettersOnly(this)" required>
                                 </div>
 								<div class="form-group">
                                     <label for="exampleInputPassword1">Username</label>
@@ -75,6 +78,13 @@ include_once '../../layout/navigation.php';
 								</div>
 		</div>
 	</section>
+
+	<script >function lettersOnly(input) {
+    var regex = /[^a-z ]/gi;
+    input.value = input.value.replace(regex, "");
+		}
+    </script>
+
 
 <?php include_once '../../layout/footer.php';
 

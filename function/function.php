@@ -85,7 +85,7 @@ class ADMIN{
                     <td><?php print($row['nama']); ?></td>
                     <td><?php print($row['id_calon']); ?></td>
 										<td><?php print($row['tanggal']); ?></td>
-                    <td>
+                    <!-- <td>
                     	<?php  
                     	if ($_SESSION['tgl_vote'] != date('Y-m-d')) {
                     		// code...
@@ -96,7 +96,7 @@ class ADMIN{
                         </a>
                         <?php } ?>
 
-                    </td>
+                    </td> -->
 
                 </tr>
     	<?php
