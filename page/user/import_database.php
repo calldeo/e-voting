@@ -11,7 +11,9 @@
 
 	    if(isset( $_POST["drop"] )){
 	//             kosongkan tabel user
+	    	 	$admin->deleteAllCount();
 	            $admin->deleteAllUser();
+	           
 	    };
 		
 		$excelreader = new PHPExcel_Reader_Excel2007();
@@ -19,7 +21,9 @@
 		$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true);
 		
 		// Buat query Insert
+		// $sql = $admin->runQuery("TRUNCATE TABLE hasil_voting");
 		$sql = $admin->runQuery("INSERT INTO users (id_user, nama, username, password, akses) VALUES(:id_user,:nama,:username,:password,:akses)");
+		
 		
 		$numrow = 1;
 		foreach($sheet as $row){
@@ -46,6 +50,7 @@
 				$sql->bindParam(':password', $p);
 				$sql->bindParam(':akses', $akses);
 				$sql->execute(); // Eksekusi query insert
+				
 			}
 			
 			$numrow++; // Tambah 1 setiap kali looping

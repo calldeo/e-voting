@@ -174,6 +174,12 @@ public function DeleteUser($id){
 		return true;
 	}
 
+	public function deleteAllCount(){
+		$stmt = $this->conn->prepare("TRUNCATE TABLE hasil_voting");
+		$stmt->execute();
+		return true;
+	}
+
 
 
 // Calon

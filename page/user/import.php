@@ -193,7 +193,7 @@ include_once '../../layout/navigation.php';
                 <div class="box-body">
                   <!-- Input -->
                   <div class="form-group">';
-                echo '<label><input type="checkbox" name="drop" value="1" /> <i>Hapus seluruh data terlebih dahulu</i> </label>';
+                echo '<label><input type="checkbox"  name="drop" value="1"  /> <font color="red" ><i>Hapus seluruh data terlebih dahulu* </i></font> </label>';
                 echo "</div>
                   </div>";
                 
